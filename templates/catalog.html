@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Каталог{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="header">
+            <h1>Сравнение телефонов</h1>
+            <table style="width:1000px; height:300px; text-align:center">
+                <tr>
+                    <th>Модель:</th>
+                    {% for phone in phone_list %}
+                        {% for feature in phone %}
+                            <th>{{ feature.phone.model }}</th>
+                        {% endfor %}
+                    {% endfor %}
+                </tr>
+                <tr>
+                    <td>Стоимость:</td>
+                    {% for phone in phone_list %}
+                        {% for feature in phone %}
+                            <td>{{ feature.phone.price }}</td>
+                        {% endfor %}
+                    {% endfor %}
+                </tr>
+                <tr>
+                    <td>Камера:</td>
+                    {% for phone in phone_list %}
+                        {% for feature in phone %}
+                            <td>{{ feature.phone.camera }}</td>
+                        {% endfor %}
+                    {% endfor %}
+                </tr>
+                <tr>
+                    <td>Операционная система:</td>
+                    {% for phone in phone_list %}
+                        {% for feature in phone %}
+                            <td>{{ feature.phone.operating_system }}</td>
+                        {% endfor %}
+                    {% endfor %}
+                </tr>
+                <tr>
+                    <td>Оперативная память:</td>
+                    {% for phone in phone_list %}
+                        {% for feature in phone %}
+                            <td>{{ feature.phone.ram }}</td>
+                        {% endfor %}
+                    {% endfor %}
+                </tr>
+                <tr>
+                    <td>Беспроводная зарядка:</td>
+                    {% for phone in phone_list %}
+                        {% for feature in phone %}
+                            {% if feature.wireless_charging %}
+                            <td>Да</td>
+                            {% else %}
+                            <td>-</td>
+                            {% endif %}
+                        {% endfor %}
+                    {% endfor %}
+                </tr>
+                <tr>
+                    <td>MicroSD:</td>
+                    {% for phone in phone_list %}
+                        {% for feature in phone %}
+                            {% if feature.micro_sd %}
+                            <td>Да</td>
+                            {% else %}
+                            <td>-</td>
+                            {% endif %}
+                        {% endfor %}
+                    {% endfor %}
+                </tr>
+                <tr>
+                    <td>Инфракрасный порт:</td>
+                    {% for phone in phone_list %}
+                        {% for feature in phone %}
+                            {% if feature.irda %}
+                            <td>Да</td>
+                            {% else %}
+                            <td>-</td>
+                            {% endif %}
+                        {% endfor %}
+                    {% endfor %}
+                </tr>
+            </table>
+{% endblock %}
