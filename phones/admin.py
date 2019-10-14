@@ -1,11 +1,7 @@
 from django.contrib import admin
-from phones.models import Phone, Apple, Samsung, Meizu
+from .models import Apple, Samsung, Meizu
 
 # Register your models here.
-@admin.register(Phone)
-class PhoneAdmin(admin.ModelAdmin):
-    pass
-
 @admin.register(Apple)
 class AppleAdmin(admin.ModelAdmin):
     pass

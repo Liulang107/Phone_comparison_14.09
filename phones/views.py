@@ -7,13 +7,9 @@ def show_catalog(request):
     phones = (Apple, Samsung, Meizu)
     phone_list = []
     for phone in phones:
-        model = phone.objects.select_related()
-        print(model)
+        model = phone.objects.all()
         phone_list.append(model)
-
     context = {'phone_list': phone_list}
-    return render(
-        request,
-        template,
-        context
-    )
+
+    return render(request, template, context)
+

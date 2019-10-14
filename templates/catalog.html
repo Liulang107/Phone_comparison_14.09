@@ -11,7 +11,7 @@
                     <th>Модель:</th>
                     {% for phone in phone_list %}
                         {% for feature in phone %}
-                            <th>{{ feature.phone.model }}</th>
+                            <th>{{ feature.model }}</th>
                         {% endfor %}
                     {% endfor %}
                 </tr>
@@ -19,7 +19,7 @@
                     <td>Стоимость:</td>
                     {% for phone in phone_list %}
                         {% for feature in phone %}
-                            <td>{{ feature.phone.price }}</td>
+                            <td>{{ feature.price }}</td>
                         {% endfor %}
                     {% endfor %}
                 </tr>
@@ -27,7 +27,7 @@
                     <td>Камера:</td>
                     {% for phone in phone_list %}
                         {% for feature in phone %}
-                            <td>{{ feature.phone.camera }}</td>
+                            <td>{{ feature.camera }}</td>
                         {% endfor %}
                     {% endfor %}
                 </tr>
@@ -35,7 +35,7 @@
                     <td>Операционная система:</td>
                     {% for phone in phone_list %}
                         {% for feature in phone %}
-                            <td>{{ feature.phone.operating_system }}</td>
+                            <td>{{ feature.operating_system }}</td>
                         {% endfor %}
                     {% endfor %}
                 </tr>
@@ -43,7 +43,7 @@
                     <td>Оперативная память:</td>
                     {% for phone in phone_list %}
                         {% for feature in phone %}
-                            <td>{{ feature.phone.ram }}</td>
+                            <td>{{ feature.ram }}</td>
                         {% endfor %}
                     {% endfor %}
                 </tr>

@@ -8,14 +8,14 @@ class Phone(models.Model):
     operating_system = models.CharField('Операционная система', max_length=50)
     ram = models.IntegerField('Оперативная память')
 
-class Apple(models.Model):
+    class Meta:
+        abstract = True
+
+class Apple(Phone):
     wireless_charging = models.BooleanField('Беспроводная зарядка')
-    phone = models.ForeignKey(Phone, on_delete=models.CASCADE)
 
-class Samsung(models.Model):
+class Samsung(Phone):
     micro_sd = models.BooleanField('MicroSD')
-    phone = models.ForeignKey(Phone, on_delete=models.CASCADE)
 
-class Meizu(models.Model):
+class Meizu(Phone):
     irda = models.BooleanField('Инфракрасный порт')
-    phone = models.ForeignKey(Phone, on_delete=models.CASCADE)
